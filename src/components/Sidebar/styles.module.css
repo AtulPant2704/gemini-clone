@@ -1,0 +1,146 @@
+.sidebar {
+  background-color: var(--sidebarBackground);
+  color: var(--sidebarColor);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 0 14px;
+  width: 40px;
+  transition: width 0.3s ease;
+}
+
+.sidebar.expanded {
+  width: 236px;
+}
+
+.menuIconContainer {
+  display: flex;
+  align-items: center;
+  min-height: 82px;
+}
+
+.menuIcon {
+  border-radius: 50%;
+  font-size: 20px;
+  margin: 10px 0 0 2px;
+  padding: 8px;
+}
+
+.newChat {
+  display: flex;
+  align-items: center;
+  background-color: var(--newChatBackground);
+  border-radius: 20px;
+  color: var(--newChatColor);
+  height: 24px;
+  margin-bottom: 16px;
+  margin-top: 22px;
+  padding: 8px;
+  width: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+}
+
+.newChatText {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-left: 16px;
+  margin-right: 8px;
+}
+
+.bottomContainer {
+  position: fixed;
+  bottom: 0;
+  padding: 10px 0 20px;
+}
+
+.actionItem {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  color: var(--actionColor);
+  cursor: not-allowed;
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 36px;
+}
+
+.actionItemIcon {
+  font-size: 20px;
+  margin-left: 12px;
+}
+
+.actionText {
+  margin-left: 16px;
+}
+
+.geminiAdvancedAndLocation {
+  height: 108px;
+}
+
+.geminiAdvanced {
+  display: flex;
+  align-items: center;
+  background-color: var(--upgradeGeminiBackground);
+  border-radius: 10px;
+  cursor: not-allowed;
+  font-size: 12px;
+  font-weight: 500;
+  gap: 8px;
+  height: 16px;
+  margin: 10px 0;
+  padding: 10px 16px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.geminiAdvancedText {
+  animation: delayedShow 1s ease;
+}
+
+.locationContainer {
+  display: flex;
+  align-items: start;
+  padding-top: 10px;
+}
+
+.locationIcon {
+  color: var(--locationIconColor);
+  font-size: 9px;
+  padding: 7px 8px;
+}
+
+.location {
+  display: flex;
+  flex-direction: column;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1rem;
+  padding-top: 4px;
+  width: 161px;
+}
+
+.address {
+  color: var(--promptIconColor);
+}
+
+.updateLocation {
+  color: var(--updateLocationColor);
+  cursor: not-allowed;
+}
+
+.expanded .newChatText,
+.expanded .geminiAdvancedAndLocation {
+  animation: delayedShow 0.75s ease;
+}
+
+@keyframes delayedShow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

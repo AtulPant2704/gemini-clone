@@ -1,0 +1,9 @@
+.homePage {
+  height: 100vh;
+  display: flex;
+}
+
+.homeContainer {
+  width: 100%;
+  background-color: var(--backgroundColor);
+}
