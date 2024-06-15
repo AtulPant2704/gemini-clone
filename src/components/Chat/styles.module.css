@@ -28,7 +28,7 @@
   background-color: darkgreen;
   color: var(--headerIconColor);
   cursor: not-allowed;
-  margin-right: 12px;
+  margin-right: 20px;
   font-size: 0.9rem;
   font-weight: 600;
 }
@@ -48,12 +48,23 @@
 
 .showDraftsContainer {
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
   align-items: center;
+  width: 100%;
   color: var(--promptCardText);
   font-size: 0.875rem;
   font-weight: 500;
   height: 48px;
+}
+
+.showDraftsContainer .bigScreenIcon {
+  visibility: hidden;
+}
+
+.showDraftsAndDropdown {
+  display: flex;
+  justify-content: end;
+  align-items: center;
 }
 
 .showDrafts {
@@ -140,5 +151,22 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .questionContainer {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .question {
+    order: 1;
+    width: 100%;
+  }
+  .showDraftsContainer .bigScreenIcon {
+    visibility: visible;
+  }
+  .answerContainer .bigScreenIcon {
+    display: none;
   }
 }

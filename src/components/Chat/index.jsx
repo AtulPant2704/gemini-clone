@@ -41,18 +41,27 @@ const Chat = ({ response }) => {
           </div>
           <div className={styles.draftsAndIconContainer}>
             <div className={styles.showDraftsContainer}>
-              <div className={styles.showDrafts}>
-                Show drafts
-                <div
-                  className={`material-symbols-outlined ${styles.showDraftsIcon}`}
-                >
-                  expand_more
+              <img
+                src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg"
+                alt="loader"
+                className={`${styles.bigScreenIcon} ${
+                  loading && styles.rotate
+                }`}
+              />
+              <div className={styles.showDraftsAndDropdown}>
+                <div className={styles.showDrafts}>
+                  Show drafts
+                  <div
+                    className={`material-symbols-outlined ${styles.showDraftsIcon}`}
+                  >
+                    expand_more
+                  </div>
                 </div>
-              </div>
-              <div
-                className={`material-symbols-outlined ${styles.speakerIcon}`}
-              >
-                volume_up
+                <div
+                  className={`material-symbols-outlined ${styles.speakerIcon}`}
+                >
+                  volume_up
+                </div>
               </div>
             </div>
           </div>
