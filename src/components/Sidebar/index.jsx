@@ -71,7 +71,10 @@ const Sidebar = ({ isExpanded, setIsExpanded, setIsChatPage }) => {
           )}
         </div>
       </aside>
-      <div className={styles.sidebarBackdrop}></div>
+      <div
+        className={styles.sidebarBackdrop}
+        onClick={() => setIsExpanded(!isExpanded)}
+      ></div>
     </div>
   );
 };
