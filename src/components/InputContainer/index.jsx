@@ -9,7 +9,7 @@ const InputContainer = ({ enteredPrompt, setEnteredPrompt, submitHandler }) => {
       submitHandler();
       return;
     }
-    setEnteredPrompt(event.target.textContent.trim());
+    setEnteredPrompt(event.target.innerText.trim());
   };
 
   return (
@@ -19,7 +19,7 @@ const InputContainer = ({ enteredPrompt, setEnteredPrompt, submitHandler }) => {
         contentEditable={true}
         placeholder="Enter a prompt here"
         id="enterPrompt"
-        onKeyDown={promptInputHandler}
+        onKeyUp={promptInputHandler}
       >
         {enteredPrompt}
       </div>
