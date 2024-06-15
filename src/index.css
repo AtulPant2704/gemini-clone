@@ -39,4 +39,9 @@ code {
   --inputIconBackground: #3c4043;
   --inputPlaceHolder: #bdc1c6;
   --disclaimerColor: #c4c7c5;
+  --showDraftsBackground: #ffffff0d;
+  --showDraftsIconColor: #a8c7fa;
+  --answerIconsColor: #c4c7c5;
+  --likeIconHoverBackground: #1b1b1c;
+  --likeIconHoverColor: #f8f9fa;
 }

@@ -1,0 +1,127 @@
+.chatContainer {
+  flex-grow: 0;
+  margin: 12px 0 50px;
+  max-width: 728px;
+  overflow: auto;
+  padding-left: 8px;
+  scrollbar-width: none;
+  width: 100%;
+}
+
+.lastPrompt {
+  height: 100%;
+}
+
+.questionContainer {
+  display: flex;
+  align-items: start;
+  min-height: 40px;
+}
+
+.userAvatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: darkgreen;
+  color: var(--headerIconColor);
+  cursor: not-allowed;
+  margin-right: 12px;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.question {
+  color: var(--promptCardText);
+  font-size: 1rem;
+  margin-top: 6px;
+}
+
+.draftsAndIconContainer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  cursor: not-allowed;
+}
+
+.showDraftsContainer {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  color: var(--promptCardText);
+  font-size: 0.875rem;
+  font-weight: 500;
+  height: 48px;
+}
+
+.showDrafts {
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  padding: 4px 0 4px 16px;
+}
+
+.showDraftsIcon {
+  color: var(--showDraftsIconColor);
+  cursor: not-allowed;
+  margin: 0 12px 0 4px;
+}
+
+.speakerIcon {
+  border-radius: 50%;
+  color: var(--actionColor);
+  cursor: not-allowed;
+  font-size: 24px;
+  padding: 8px;
+}
+
+.speakerIcon:hover,
+.showDrafts:hover {
+  background-color: var(--showDraftsBackground);
+}
+
+.answerContainer {
+  display: flex;
+  align-items: start;
+  color: var(--promptCardText);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 48px;
+}
+
+.bigScreenIcon {
+  height: 32px;
+  margin-right: 20px;
+  width: 32px;
+}
+
+.answer {
+  padding-top: 8px;
+}
+
+.answerIconsContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 40px;
+  margin-left: -8px;
+  padding-left: 48px;
+  padding-top: 1rem;
+}
+
+.likeIcon,
+.answerIcon {
+  border-radius: 50%;
+  color: var(--answerIconsColor);
+  cursor: not-allowed;
+  font-size: 20px;
+  padding: 10px;
+}
+
+.likeIcon:hover,
+.answerIcon:hover {
+  background-color: var(--likeIconHoverBackground);
+  color: var(--likeIconHoverColor);
+}

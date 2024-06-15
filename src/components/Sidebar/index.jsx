@@ -2,8 +2,7 @@ import { SIDEBAR_ACTION_ITEMS } from "utils/constants";
 
 import styles from "./styles.module.css";
 
-const Sidebar = ({ isExpanded, setIsExpanded }) => {
-  console.log({ isExpanded });
+const Sidebar = ({ isExpanded, setIsExpanded, setIsChatPage }) => {
   return (
     <div
       className={`${styles.sidebarContainer} ${isExpanded && styles.expanded}`}
@@ -23,7 +22,10 @@ const Sidebar = ({ isExpanded, setIsExpanded }) => {
             </div>
           </div>
         </div>
-        <div className={`cursor-pointer ${styles.newChat}`}>
+        <div
+          className={`cursor-pointer ${styles.newChat}`}
+          onClick={() => setIsChatPage(false)}
+        >
           <div className="material-symbols-outlined">add</div>
           {isExpanded && <div className={styles.newChatText}>New chat</div>}
         </div>

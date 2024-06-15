@@ -1,0 +1,56 @@
+.inputContainer {
+  background-color: var(--inputBackground);
+  border-radius: 32px;
+  box-shadow: 0 -20px 30px var(--backgroundColor);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+  padding: 4px 8px;
+}
+
+.inputContainer:focus-within {
+  background-color: var(--inputFocusBackground);
+}
+
+.inputDiv {
+  border: 0;
+  color: var(--inputColor);
+  display: flex;
+  flex-grow: 1;
+  font-size: 1rem;
+  font-weight: 400;
+  justify-content: space-between;
+  line-height: 24px;
+  margin-left: 12px;
+  max-height: 192px;
+  outline: 0;
+  overflow: auto;
+  padding: 16px 16px 16px 0;
+}
+
+.inputDiv[contenteditable="true"]:empty:before {
+  color: var(--inputPlaceHolder);
+  content: attr(placeholder);
+  pointer-events: none;
+}
+
+.iconsDiv {
+  display: flex;
+  align-items: end;
+  padding-bottom: 3px;
+}
+
+.inputIcon {
+  border-radius: 50%;
+  color: var(--inputColor);
+  cursor: pointer;
+  padding: 12px;
+  cursor: not-allowed;
+}
+
+.inputIcon:hover {
+  background-color: var(--inputIconBackground);
+}

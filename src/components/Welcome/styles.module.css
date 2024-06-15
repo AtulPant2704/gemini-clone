@@ -1,0 +1,53 @@
+.welcomeContainer {
+  flex-grow: 0;
+  margin: 6px 0 50px;
+  max-width: 830px;
+  overflow: auto;
+  scrollbar-width: none;
+  width: 100%;
+}
+
+.helloContainer {
+  margin-top: 18px;
+  font-size: 3.5rem;
+  font-weight: 500;
+  line-height: 4rem;
+}
+
+.helloText {
+  background: linear-gradient(
+    74deg,
+    #4285f4 0,
+    #9b72cb 9%,
+    #d96570 20%,
+    #d96570 24%,
+    #9b72cb 35%,
+    #4285f4 44%,
+    #9b72cb 50%,
+    #896570 56%,
+    #131314 75%,
+    #131314 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-size: 123% 100%;
+  color: #0000;
+}
+
+.helpText {
+  color: var(--helpText);
+}
+
+.promptCardsContainer {
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+@media screen and (min-width: 600px) {
+  .promptCardsContainer {
+    margin-top: 78px;
+  }
+}
