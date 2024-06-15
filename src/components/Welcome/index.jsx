@@ -3,7 +3,11 @@ import PromptCard from "components/PromptCard";
 import { SAMPLE_PROMPTS } from "utils/constants";
 import styles from "./styles.module.css";
 
-const Welcome = () => {
+const Welcome = ({ setEnteredPrompt }) => {
+  const promptHandler = (prompt) => {
+    setEnteredPrompt(prompt);
+  };
+
   return (
     <div className={styles.welcomeContainer}>
       <div className={styles.helloContainer}>
@@ -12,8 +16,13 @@ const Welcome = () => {
       </div>
 
       <div className={styles.promptCardsContainer}>
-        {SAMPLE_PROMPTS.map(({ icon, text }, index) => (
-          <PromptCard key={index} icon={icon} text={text} />
+        {SAMPLE_PROMPTS.map(({ icon, prompt }, index) => (
+          <PromptCard
+            key={index}
+            icon={icon}
+            prompt={prompt}
+            promptHandler={promptHandler}
+          />
         ))}
       </div>
     </div>

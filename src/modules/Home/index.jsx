@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Sidebar from "components/Sidebar";
 
@@ -9,7 +9,18 @@ import InputContainer from "components/InputContainer";
 
 const Home = () => {
   const [isExpanded, setIsExpanded] = useState(false);
-  const [isChatPage, setIsChatPage] = useState(true);
+  const [isChatPage, setIsChatPage] = useState(false);
+  const [enteredPrompt, setEnteredPrompt] = useState("");
+  const [finalPrompt, setFinalPrompt] = useState("");
+
+  const submitHandler = () => {
+    setFinalPrompt(enteredPrompt);
+    setIsChatPage(true);
+  };
+
+  useEffect(() => {
+    setEnteredPrompt("");
+  }, [isChatPage]);
 
   return (
     <main className={styles.homePage}>
@@ -48,10 +59,18 @@ const Home = () => {
           </div>
         </header>
         <section className={styles.middleContainer}>
-          {isChatPage ? <Chat /> : <Welcome />}
+          {isChatPage ? (
+            <Chat prompt={finalPrompt} />
+          ) : (
+            <Welcome setEnteredPrompt={setEnteredPrompt} />
+          )}
         </section>
         <section className={styles.bottomContainer}>
-          <InputContainer />
+          <InputContainer
+            enteredPrompt={enteredPrompt}
+            setEnteredPrompt={setEnteredPrompt}
+            submitHandler={submitHandler}
+          />
           <div className={styles.disclaimer}>
             Gemini may display inaccurate info, including about people, so
             double-check its responses.{" "}

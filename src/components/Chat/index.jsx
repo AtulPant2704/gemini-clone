@@ -1,14 +1,35 @@
+import { useEffect, useState } from "react";
+
+import Loader from "components/Loader";
+
+import { getRandomAnswer } from "utils/functions";
 import googleLogo from "assets/googleLogo.svg";
 import styles from "./styles.module.css";
 
-const Chat = () => {
+const Chat = ({ prompt }) => {
+  const [loading, setLoading] = useState(false);
+  const [promptAnswer, setPromptAnswer] = useState("");
+
+  const getAnswer = () => {
+    setLoading(true);
+    const answer = getRandomAnswer();
+    setTimeout(() => {
+      setPromptAnswer(answer);
+      setLoading(false);
+    }, 2000);
+  };
+
+  useEffect(() => {
+    getAnswer();
+  }, []);
+
   return (
     <div className={styles.chatContainer}>
       <div id="scroll" className={styles.lastPrompt}>
         <div className={styles.questionContainer}>
           <div className={styles.userAvatar}>U</div>
-          <div className={styles.question} contenteditable="false">
-            Find hotels in Phuket for a week, and suggest a packing list
+          <div className={styles.question} contentEditable="false">
+            {prompt}
           </div>
         </div>
         <div className={styles.draftsAndIconContainer}>
@@ -30,20 +51,15 @@ const Chat = () => {
           <img
             src="https://www.gstatic.com/lamda/images/gemini_sparkle_v002_d4735304ff6292a690345.svg"
             alt="loader"
-            className={`${styles.bigScreenIcon}`}
+            className={`${styles.bigScreenIcon} ${loading && styles.rotate}`}
           />
-          <div className={`${styles.answer} ${styles.typing}`}>
-            The aroma of sizzling spices mingles with the sweetness of simmering
-            fruits, a symphony of scents that fills the air. In the kitchen, you
-            embark on a culinary adventure, a fusion of contrasting flavors and
-            techniques. Drawing inspiration from global cuisines, you combine
-            tangy kimchi with creamy avocado, or smoky paprika with delicate
-            rosewater. Each step is an experiment, a dance between tradition and
-            innovation. As you plate your creation, a sense of accomplishment
-            washes over you. You've not only satisfied your hunger but also
-            created something new and delicious, a testament to the boundless
-            potential of culinary exploration.
-          </div>
+          {loading ? (
+            <Loader />
+          ) : (
+            <div className={`${styles.answer} ${styles.typing}`}>
+              {promptAnswer}
+            </div>
+          )}
         </div>
         <div className={styles.answerIconsContainer}>
           <div className={`material-symbols-outlined ${styles.likeIcon}`}>

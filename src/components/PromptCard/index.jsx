@@ -1,9 +1,12 @@
 import styles from "./styles.module.css";
 
-const PromptCard = ({ icon, text }) => {
+const PromptCard = ({ icon, prompt, promptHandler }) => {
   return (
-    <div className={`cursor-pointer ${styles.promptCard}`}>
-      <div className={styles.promptText}>{text}</div>
+    <div
+      className={`cursor-pointer ${styles.promptCard}`}
+      onClick={() => promptHandler(prompt)}
+    >
+      <div className={styles.promptText}>{prompt}</div>
       <div className={`material-symbols-outlined ${styles.promptIcon}`}>
         {icon}
       </div>

@@ -1,0 +1,78 @@
+.container {
+  width: 600px;
+  flex-shrink: 0;
+  background-color: transparent;
+  max-width: 40rem;
+  display: flex;
+  gap: 1.25rem;
+  padding: 1.25rem;
+  border-radius: 0.5rem;
+}
+
+.loadingContainer {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  border-radius: 0.5rem;
+  gap: 0.85rem;
+}
+
+/* This keyframe will create the initial slide animation  */
+@keyframes expanding {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+    width: 0;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+/* This keyframe will create the loading gradient effect */
+@keyframes moving {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.animateLoading {
+  transform-origin: left;
+  animation: expanding 0.4s 0.7s forwards linear,
+    moving 1s infinite forwards linear;
+}
+
+.loadingBar {
+  height: 0.95rem;
+  border-radius: 0.125rem;
+  background-size: 200% auto;
+  opacity: 0;
+}
+
+.gradient1 {
+  background-image: linear-gradient(
+    to right,
+    #5e5f61 30%,
+    #4372bd 60%,
+    #5e5f61
+  );
+  width: 80%;
+}
+
+.gradient2 {
+  background-image: linear-gradient(to right, #4372bd, #5e5f61 60%, #4372bd);
+  width: 100%;
+}
+.gradient3 {
+  background-image: linear-gradient(
+    to right,
+    #5e5f61 50%,
+    #4372bd 90%,
+    #5e5f61
+  );
+  width: 60%;
+}

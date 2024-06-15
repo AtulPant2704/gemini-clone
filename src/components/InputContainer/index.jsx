@@ -1,6 +1,16 @@
 import styles from "./styles.module.css";
 
-const InputContainer = () => {
+const InputContainer = ({ enteredPrompt, setEnteredPrompt, submitHandler }) => {
+  const promptInputHandler = (event) => {
+    window.getSelection().selectAllChildren(event.target);
+    window.getSelection().collapseToEnd();
+    if (event.charCode === 13) {
+      submitHandler();
+      return;
+    }
+    setEnteredPrompt(event.target.textContent);
+  };
+
   return (
     <div className={styles.inputContainer}>
       <div
@@ -8,7 +18,11 @@ const InputContainer = () => {
         contentEditable={true}
         placeholder="Enter a prompt here"
         id="enterPrompt"
-      ></div>
+        onInput={promptInputHandler}
+        onKeyPress={promptInputHandler}
+      >
+        {enteredPrompt}
+      </div>
       <div className={styles.iconsDiv}>
         <div className={`material-symbols-outlined ${styles.inputIcon}`}>
           add_photo_alternate
@@ -16,6 +30,14 @@ const InputContainer = () => {
         <div className={`material-symbols-outlined ${styles.inputIcon}`}>
           mic
         </div>
+        {enteredPrompt && (
+          <div
+            className={`material-symbols-outlined cursor-pointer ${styles.inputIcon}`}
+            onClick={submitHandler}
+          >
+            send
+          </div>
+        )}
       </div>
     </div>
   );
