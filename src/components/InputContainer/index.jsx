@@ -5,6 +5,7 @@ const InputContainer = ({ enteredPrompt, setEnteredPrompt, submitHandler }) => {
     window.getSelection().selectAllChildren(event.target);
     window.getSelection().collapseToEnd();
     if (event.charCode === 13) {
+      event.preventDefault();
       submitHandler();
       return;
     }
