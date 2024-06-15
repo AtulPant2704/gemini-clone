@@ -4,7 +4,7 @@ const InputContainer = ({ enteredPrompt, setEnteredPrompt, submitHandler }) => {
   const promptInputHandler = (event) => {
     window.getSelection().selectAllChildren(event.target);
     window.getSelection().collapseToEnd();
-    if (event.charCode === 13) {
+    if (event.keyCode === 13) {
       event.preventDefault();
       submitHandler();
       return;
@@ -19,8 +19,7 @@ const InputContainer = ({ enteredPrompt, setEnteredPrompt, submitHandler }) => {
         contentEditable={true}
         placeholder="Enter a prompt here"
         id="enterPrompt"
-        onInput={promptInputHandler}
-        onKeyPress={promptInputHandler}
+        onKeyDown={promptInputHandler}
       >
         {enteredPrompt}
       </div>
