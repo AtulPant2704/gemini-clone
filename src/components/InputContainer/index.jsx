@@ -9,7 +9,7 @@ const InputContainer = ({ enteredPrompt, setEnteredPrompt, submitHandler }) => {
       submitHandler();
       return;
     }
-    setEnteredPrompt(event.target.textContent);
+    setEnteredPrompt(event.target.textContent.trim());
   };
 
   return (
