@@ -27,6 +27,12 @@ const Home = () => {
     setEnteredPrompt("");
   }, [response]);
 
+  useEffect(() => {
+    if (!isChatPage) {
+      setResponse([]);
+    }
+  }, [isChatPage]);
+
   return (
     <main className={styles.homePage}>
       <Sidebar
