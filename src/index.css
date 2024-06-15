@@ -19,8 +19,24 @@ code {
   --newChatBackground: #13131461;
   --newChatColor: #e3e3e361;
   --actionColor: #e8eaed;
-  --upgradeGeminiBackground: #37393b;
+  --actionItemHoverBackground: #282a2c;
+  --actionItemHoverColor: #e3e3e3;
+  --geminiAdvancedBackground: #37393b;
   --promptIconColor: #e3e3e3;
   --locationIconColor: #8e918f;
   --updateLocationColor: #a8c7fa;
+  --gemini-text: #caccce;
+  --headerIconColor: #ffffff;
+  --helpText: #444746;
+  --promptCardBackground: #1e1f20;
+  --promptCardHoverBackground: #333537;
+  --promptCardText: #e3e3e3;
+  --promptIconBackground: #131314;
+  --promptIconColor: #e3e3e3;
+  --inputBackground: #1e1f20;
+  --inputFocusBackground: #282a2c;
+  --inputColor: #ffffff;
+  --inputIconBackground: #3c4043;
+  --inputPlaceHolder: #bdc1c6;
+  --disclaimerColor: #c4c7c5;
 }
