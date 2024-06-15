@@ -46,12 +46,14 @@ const Home = () => {
             </div>
           </div>
           <div className={styles.newChatAndUserLogo}>
-            <div
-              className={`material-symbols-outlined cursor-pointer ${styles.newChatIcon}`}
-              onClick={() => setIsChatPage(false)}
-            >
-              add
-            </div>
+            {isChatPage && (
+              <div
+                className={`material-symbols-outlined cursor-pointer ${styles.newChatIcon}`}
+                onClick={() => setIsChatPage(false)}
+              >
+                add
+              </div>
+            )}
             <div className={`material-symbols-outlined  ${styles.historyIcon}`}>
               more_vert
             </div>
