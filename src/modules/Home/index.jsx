@@ -6,21 +6,26 @@ import styles from "./styles.module.css";
 import Chat from "components/Chat";
 import Welcome from "components/Welcome";
 import InputContainer from "components/InputContainer";
+import { getRandomAnswer } from "utils/functions";
 
 const Home = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isChatPage, setIsChatPage] = useState(false);
   const [enteredPrompt, setEnteredPrompt] = useState("");
-  const [finalPrompt, setFinalPrompt] = useState("");
+  const [response, setResponse] = useState([]);
 
   const submitHandler = () => {
-    setFinalPrompt(enteredPrompt);
+    const finalPrompt = {
+      prompt: enteredPrompt,
+      answer: getRandomAnswer(),
+    };
+    setResponse((prev) => [...prev, finalPrompt]);
     setIsChatPage(true);
   };
 
   useEffect(() => {
     setEnteredPrompt("");
-  }, [isChatPage]);
+  }, [response]);
 
   return (
     <main className={styles.homePage}>
@@ -62,7 +67,7 @@ const Home = () => {
         </header>
         <section className={styles.middleContainer}>
           {isChatPage ? (
-            <Chat prompt={finalPrompt} />
+            <Chat response={response} />
           ) : (
             <Welcome setEnteredPrompt={setEnteredPrompt} />
           )}
