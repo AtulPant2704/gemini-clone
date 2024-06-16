@@ -2,7 +2,7 @@ import styles from "./styles.module.css";
 
 const Loader = () => {
   return (
-    <div className={styles.container}>
+    <div className={styles.container} data-testid="loader">
       <div className={styles.loadingContainer}>
         <div
           className={`${styles.loadingBar} ${styles.gradient1} ${styles.animateLoading}`}

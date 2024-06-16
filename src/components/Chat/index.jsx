@@ -21,7 +21,7 @@ const Chat = ({ response }) => {
   }, []);
 
   useEffect(() => {
-    lastElementRef?.current?.scrollIntoView();
+    lastElementRef?.current?.scrollIntoView?.();
     getAnswer();
   }, [response]);
 

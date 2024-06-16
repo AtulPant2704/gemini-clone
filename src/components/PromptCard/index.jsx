@@ -5,6 +5,7 @@ const PromptCard = ({ icon, prompt, promptHandler }) => {
     <div
       className={`cursor-pointer ${styles.promptCard}`}
       onClick={() => promptHandler(prompt)}
+      data-testid="prompt-card"
     >
       <div className={styles.promptText}>{prompt}</div>
       <div className={`material-symbols-outlined ${styles.promptIcon}`}>
